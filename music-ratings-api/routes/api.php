@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::get('/albums', function() {
+    $albums = [
+        'album 1' => 'an isolated mind',
+        'album 2' => 'scythe of cosmic chaos',
+    ];
+    return $albums;
 });
