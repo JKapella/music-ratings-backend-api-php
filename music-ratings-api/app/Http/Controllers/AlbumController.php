@@ -44,4 +44,11 @@ class AlbumController extends Controller
 
         return new AlbumResource($album);
     }
+
+    public function update(Album $album, Request $request): AlbumResource
+    {
+        $album->update($request->all());
+
+        return new AlbumResource($album);
+    }
 }
