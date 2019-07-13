@@ -27,6 +27,9 @@ class AlbumController extends Controller
         return new AlbumResourceCollection(Album::paginate());
     }
 
+    /**
+     * @return AlbumResourceCollection
+     */
     public function store(Request $request) 
     {
         $request->validate([
@@ -45,6 +48,9 @@ class AlbumController extends Controller
         return new AlbumResource($album);
     }
 
+    /**
+     * @return Album $album
+     */
     public function update(Album $album, Request $request): AlbumResource
     {
         $album->update($request->all());
@@ -52,7 +58,10 @@ class AlbumController extends Controller
         return new AlbumResource($album);
     }
 
-    public function destroy(Album $album) 
+    /**
+     * @return array
+     */
+    public function destroy(Album $album)
     {
         $album->delete();
 
