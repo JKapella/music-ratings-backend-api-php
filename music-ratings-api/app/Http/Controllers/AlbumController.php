@@ -21,6 +21,6 @@ class AlbumController extends Controller
 
     public function index(): AlbumResourceCollection 
     {
-
+        return new AlbumResourceCollection(Album::paginate());
     }
 }
