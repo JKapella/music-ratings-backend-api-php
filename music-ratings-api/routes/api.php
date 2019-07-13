@@ -13,10 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-use App\Album;
-
-Route::get('/albums/{album}', function(Album $album) {
-
-    return $album;
-
-});
+Route::apiResource('/albums', 'AlbumController');
