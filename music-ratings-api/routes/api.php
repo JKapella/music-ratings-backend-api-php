@@ -14,11 +14,8 @@ use Illuminate\Http\Request;
 */
 
 
-Route::get('/albums', function() {
-    $albums = [
-        'album 1' => 'an isolated mind',
-        'album 2' => 'scythe of cosmic chaos',
-    ];
+Route::get('/albums/{album}', function(Album $album) {
 
-    return $albums;
+    return $album;
+
 });
