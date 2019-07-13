@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+use App\Album;
 
 Route::get('/albums/{album}', function(Album $album) {
 
