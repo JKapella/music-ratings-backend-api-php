@@ -19,8 +19,27 @@ class AlbumController extends Controller
         return new AlbumResource($album);
     }
 
+    /**
+     * @return AlbumResourceCollection
+     */
     public function index(): AlbumResourceCollection 
     {
         return new AlbumResourceCollection(Album::paginate());
+    }
+
+    public function store(Request $request) 
+    {
+        $request->validate([
+            'artist' => 'required',
+            'release' => 'required',
+            'genre' => 'required',
+            'other_genre' => 'required',
+            'year' => 'required',
+            'listened' => 'required',
+            'rating' => 'required',
+            'notes' => 'required',
+        ]);
+
+        return new AlbumResource($album);
     }
 }
