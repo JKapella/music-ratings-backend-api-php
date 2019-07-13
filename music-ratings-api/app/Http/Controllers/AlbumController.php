@@ -40,6 +40,8 @@ class AlbumController extends Controller
             'notes' => 'required',
         ]);
 
+        $album = Album::create($request->all());
+
         return new AlbumResource($album);
     }
 }
