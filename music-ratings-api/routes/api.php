@@ -19,5 +19,6 @@ Route::get('/albums', function() {
         'album 1' => 'an isolated mind',
         'album 2' => 'scythe of cosmic chaos',
     ];
+
     return $albums;
 });
